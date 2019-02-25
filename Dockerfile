@@ -1,5 +1,5 @@
-FROM anapsix/alpine-java:8
-MAINTAINER sscaling <sscaling@users.noreply.github.com>
+FROM openjdk:8-alpine
+LABEL maintainer="Reaction Commerce <engineering@reactioncommerce.com>"
 
 RUN apk update && apk upgrade && apk --update add curl && rm -rf /tmp/* /var/cache/apk/*
 
