@@ -6,7 +6,7 @@ services:
     ports:
       - 5556
   query:
-    image: sscaling/jmx-prometheus-exporter
+    image: reactioncommerce/jmx-prometheus-exporter
     entrypoint:
       - curl
     command:
