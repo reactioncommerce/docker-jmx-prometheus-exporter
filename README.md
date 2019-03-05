@@ -43,9 +43,18 @@ The configuration options are documented: [https://github.com/prometheus/jmx_exp
 
 Additionally, the following environment variables can be defined
 
--	SERVICE_PORT - what port to run the service (if you don't like 5556)
--	JVM_OPTS - any additional options, Xmx etc.
--	CONFIG_YML - override the location of config.yaml (default: /opt/jmx_exporter/config.yml which monitors jmx exporter's jvm)
+Name     | Description
+---------|------------
+`SERVICE_PORT` | Port to run the JMX exporter. Prometheus will scrape `/metrics` on this port. Default: 5556
+`JMX_LOCAL_OPTIONS` | The JVM options for the prometheus exporter process.
+`START_DELAY_SECONDS` | Start delay before serving requests. Any requests within the delay period will result in an empty metrics set. Default: 0
+`JMX_HOST_PORT` | The host and port to connect to via remote JMX. If neither this nor `JMX_URL` is specified, will talk to the local JVM.
+`JMX_USERNAME` | The username to be used in remote JMX password authentication.
+`JMX_PASSWORD` | The password to be used in remote JMX password authentication.
+`JMX_SSL`      | Whether JMX connection should be done over SSL. To configure certificates you have to set following system properties:<br/>`-Djavax.net.ssl.keyStore=/home/user/.keystore`<br/>`-Djavax.net.ssl.keyStorePassword=changeit`<br/>`-Djavax.net.ssl.trustStore=/home/user/.truststore`<br/>`-Djavax.net.ssl.trustStorePassword=changeit`
+`LOWERCASE_OUTPUT_NAME` | Lowercase the output metric name. Applies to default format and `name`. Defaults to false.
+`LOWERCASE_OUTPUT_LABEL_NAMES` | Lowercase the output metric label names. Applies to default format and `labels`. Defaults to false.
+
 
 Using with Prometheus
 ---------------------

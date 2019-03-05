@@ -1,0 +1,12 @@
+---
+startDelaySeconds: {{ .Env.START_DELAY_SECONDS }}
+hostPort: {{ .Env.JMX_HOST_PORT }}
+username: {{ .Env.JMX_USERNAME }}
+password: {{ .Env.JMX_PASSWORD }}
+ssl: {{ .Env.JMX_SSL }}
+lowercaseOutputName: {{ .Env.LOWERCASE_OUTPUT_NAME }}
+lowercaseOutputLabelNames: {{ .Env.LOWERCASE_OUTPUT_LABEL_NAMES }}
+#whitelistObjectNames:
+#blacklistObjectNames:
+rules:
+  - pattern: ".*"
