@@ -1,9 +1,5 @@
 #!/bin/sh
 
-CONFIG_DIR="$JMX_EXPORTER_PATH/config"
-CONFIG_FILE="$CONFIG_DIR/config.yaml"
-CONFIG_TEMPLATE="$CONFIG_DIR/config.yaml.template"
-
 # Main JAR
 test -f "$JMX_EXPORTER_JAR" || { echo "INTERNAL DOCKER ERROR: JMX exporter jar file not found: $JMX_EXPORTER_JAR - This indicates a problem with the Docker build."; exit 1; }
 
